@@ -1,7 +1,8 @@
 <template>
-  <div class="blog card m-3">
-    <h3 class="m-3 text-center">{{ blog.title }}</h3>
-    <p class="m-3">{{ blog.body }}</p>
+<div class="row justify-content-center">
+  <div class="  card cardshape border-0 color elevation-3 text-light">
+    <h3 class="p-3 text-center">{{ blog.title }}</h3>
+    <p class="p-4">{{ blog.body }}</p>
     <div class="">
       <button
         v-if="account.id === blog.creatorId"
@@ -11,6 +12,7 @@
         <i class="mdi mdi-close" />
       </button>
     </div>
+  </div>
   </div>
 </template>
 
@@ -49,4 +51,12 @@ export default {
 
 
 <style lang="scss" scoped>
+.cardshape{
+  width: auto;
+  margin-top: 5vh;
+border-radius: 10px 100px / 120px;
+}
+.color{
+  background-color: rgb(15, 106, 160);
+}
 </style>

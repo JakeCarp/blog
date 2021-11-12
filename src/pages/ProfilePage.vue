@@ -1,11 +1,20 @@
 <template>
-  <div class="about text-center">
-    <h1>Welcome {{ account.name }}</h1>
-    <img class="rounded" :src="account.picture" alt="" />
-    <p>{{ account.email }}</p>
+  <div class=" col-12 about text-center justify-content-center d-flex flex-column bg-dark">
+
+    <div class="card cardshape border-0 color elevation-3 text-light">
+    <h3 class="mt-2">Welcome {{ account.name }}</h3>
+    <div class=" d-flex flex-row align-items-center mb-3">
+    <img height="35" class="rounded ms-5" :src="account.picture" alt="" />
+    <p class="m-0">{{ account.email }}</p>
+    </div>
+      </div>
+  </div>
+  <div class="col-12 d-flex justify-content-end ">
+      <div class="card text-light elevation-3 border-0 color p-5 d-flex cardform">
+        <h3 class="text-center">Post Something!</h3>
     <form v-if="account.id" @submit.prevent="createBlog">
       <div class="mb-3">
-        <label for="blogTitle" class="form-label">Title</label>
+        <label for="blogTitle" class="form-label mt-1">Title</label>
         <input
           required
           v-model="state.editable.title"
@@ -18,7 +27,7 @@
         />
       </div>
       <div class="mb-3">
-        <label for="blogBody" class="form-label">Blog Body</label>
+        <label for="blogBody" class="form-label">Post:</label>
         <textarea
           required
           v-model="state.editable.body"
@@ -27,11 +36,12 @@
           id=""
           rows="3"
         ></textarea>
-        <button class="btn btn-primary my-3" type="submit">Create</button>
+        <button class="btn selectable btn-outline-light my-3" type="submit">Create</button>
       </div>
     </form>
+    </div>
+    </div>
     <thread />
-  </div>
 </template>
 
 <script>
@@ -80,5 +90,25 @@ export default {
 <style scoped>
 img {
   max-width: 100px;
+}
+.color{
+  background-color: rgb(15, 106, 160);
+}
+.cardshape{
+  width: 40%;
+  margin-top: 5vh;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+  border-top-left-radius: 0%;
+  border-bottom-left-radius: 0%;
+}
+.cardform{
+width: 50%;
+  margin-top: 5vh;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+  
 }
 </style>

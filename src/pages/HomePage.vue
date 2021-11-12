@@ -1,7 +1,13 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid bg-dark">
+    <div class="row justify-content-center">
+      <div class="col-12">
     <search class="pt-3" />
+    <div class="m-2">
     <thread />
+    </div>
+    </div>
+    </div>
   </div>
 </template>
 
